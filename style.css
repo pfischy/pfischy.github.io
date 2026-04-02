@@ -154,6 +154,20 @@ section + section {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+.wordmark img {
+  display: block;
+  height: 22px;
+  width: auto;
+}
+
+.wordmark-img {
+  display: block;
+  height: 20px;
+  width: auto;
 }
 
 .nav-links {
