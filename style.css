@@ -606,11 +606,9 @@ section + section {
 
 .brand-item img {
   display: block;
-  max-height: 26px;
+  height: 28px;
   width: auto;
   max-width: 100%;
-  object-fit: contain;
-  object-position: center;
   filter: brightness(0) invert(0.75);
   margin-bottom: var(--space-1);
 }
