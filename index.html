@@ -6,12 +6,13 @@
   <title>FISCH — Behavior-Change and Learning Design</title>
   <meta name="description" content="FISCH is a behavior-change and learning design partner. We find the moments where performance breaks and build the smallest useful system to fix them." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/fisch-logo-green.svg" />
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav-inner">
-      <a href="#" class="wordmark">FISCH</a>
+      <a href="#" class="wordmark"><img src="assets/logos/fisch-logo-green-gradient-exterior.svg" alt="FISCH" /></a>
       <div class="nav-links">
         <a href="#problem" class="nav-link">Problem</a>
         <a href="#method" class="nav-link">Method</a>
@@ -43,31 +44,29 @@
         <h2>Behavior change needs more than information.</h2>
         <p class="section-lead">FISCH helps teams move from expertise to action by identifying the moment that matters, building the right support around it, reinforcing it in the work, and proving whether it changed what people do next.</p>
         <div class="journey-sequence">
-          <div class="journey-step" tabindex="0">
+          <div class="journey-step" tabindex="0" role="button" aria-pressed="false" data-description="The knowledge exists, but it is not yet translating into reliable action.">
             <span class="journey-node"></span>
             <span class="journey-step-label">Expertise</span>
-            <div class="journey-tooltip">The knowledge exists, but it is not yet translating into reliable action.</div>
           </div>
-          <div class="journey-step" tabindex="0">
+          <div class="journey-step" tabindex="0" role="button" aria-pressed="false" data-description="Identify the real situation where performance breaks or stalls.">
             <span class="journey-node"></span>
             <span class="journey-step-label">Moment</span>
-            <div class="journey-tooltip">Identify the real situation where performance breaks or stalls.</div>
           </div>
-          <div class="journey-step" tabindex="0">
+          <div class="journey-step" tabindex="0" role="button" aria-pressed="false" data-description="Give people the smallest useful tool for the move that matters.">
             <span class="journey-node"></span>
             <span class="journey-step-label">Support</span>
-            <div class="journey-tooltip">Give people the smallest useful tool for the move that matters.</div>
           </div>
-          <div class="journey-step" tabindex="0">
+          <div class="journey-step" tabindex="0" role="button" aria-pressed="false" data-description="Manager prompts, workflow cues, and recognition make the behavior easier to repeat.">
             <span class="journey-node"></span>
             <span class="journey-step-label">Reinforcement</span>
-            <div class="journey-tooltip">Manager prompts, workflow cues, and recognition make the behavior easier to repeat.</div>
           </div>
-          <div class="journey-step" tabindex="0">
+          <div class="journey-step" tabindex="0" role="button" aria-pressed="false" data-description="Measure whether the behavior changed and whether it held.">
             <span class="journey-node"></span>
             <span class="journey-step-label">Proof</span>
-            <div class="journey-tooltip">Measure whether the behavior changed and whether it held.</div>
           </div>
+        </div>
+        <div class="journey-panel">
+          <p class="journey-panel-text"></p>
         </div>
       </div>
     </section>
@@ -75,6 +74,7 @@
     <!-- 3. Problem -->
     <section id="problem">
       <div class="section-inner">
+        <p class="overline">The Problem</p>
         <h2>Performance breaks at predictable moments.</h2>
         <p class="section-lead">Most organizations have the expertise. What they're missing is the architecture that turns it into consistent, observable behavior. The gap is more than knowledge, it's what people do in the moment that matters.</p>
         <ul class="problem-list">
@@ -114,7 +114,7 @@
         <h2>We don't start with courses. We start with the moment.</h2>
         <p class="section-lead">Every engagement follows the same four-beat logic, regardless of topic, audience, or scale. The goal is always the same: observable behavior change, built around the moments that matter.</p>
         <ol class="method-steps">
-          <li class="method-step">
+          <li class="method-step" tabindex="0" role="button" aria-expanded="false">
             <div class="step-head">
               <span class="step-number">01</span>
               <span class="step-marker">Aim</span>
@@ -124,7 +124,7 @@
               <p>We find the exact moment where performance breaks and name what good looks like.</p>
             </div>
           </li>
-          <li class="method-step">
+          <li class="method-step" tabindex="0" role="button" aria-expanded="false">
             <div class="step-head">
               <span class="step-number">02</span>
               <span class="step-marker">Move</span>
@@ -134,7 +134,7 @@
               <p>One clear move, designed for the real situation. Built to be used immediately — not studied, not stored, not forgotten.</p>
             </div>
           </li>
-          <li class="method-step">
+          <li class="method-step" tabindex="0" role="button" aria-expanded="false">
             <div class="step-head">
               <span class="step-number">03</span>
               <span class="step-marker">Embed</span>
@@ -144,7 +144,7 @@
               <p>We reduce friction at the point of performance: reference tools, manager prompts, and workflow integration built into the context where the behavior needs to happen.</p>
             </div>
           </li>
-          <li class="method-step">
+          <li class="method-step" tabindex="0" role="button" aria-expanded="false">
             <div class="step-head">
               <span class="step-number">04</span>
               <span class="step-marker">Scale</span>
@@ -219,51 +219,44 @@
         <p class="overline">Proof</p>
         <h2>Proof over participation.</h2>
         <p class="section-lead">Completion is not readiness. FISCH looks for the signals that show whether behavior actually changed, including usage, reinforcement, confidence, and selected business lift tied to the move.</p>
-        <div class="proof-split">
-          <div class="proof-col">
-            <ul class="problem-list">
-              <li>
-                <span class="problem-label">Behavior signals</span>
-                <span class="problem-desc">Evidence that the move is actually happening.</span>
-              </li>
-              <li>
-                <span class="problem-label">Manager reinforcement</span>
-                <span class="problem-desc">Proof that the behavior is being coached and recognized.</span>
-              </li>
-              <li>
-                <span class="problem-label">Confidence and readiness</span>
-                <span class="problem-desc">Pulse checks that show whether people can do the work.</span>
-              </li>
-              <li>
-                <span class="problem-label">Business lift</span>
-                <span class="problem-desc">Metrics tied to the behavior that matters.</span>
-              </li>
-            </ul>
+        <div class="signal-grid">
+          <div class="signal-item">
+            <span class="problem-label">Behavior signals</span>
+            <span class="signal-desc">Evidence that the move is actually happening.</span>
           </div>
-          <div class="proof-col proof-col--experience">
-            <p class="overline">Selected experience</p>
-            <div class="exp-grid">
-              <div class="exp-item">
-                <div class="exp-logo-slot"></div>
-                <span class="exp-name">ESA</span>
-                <span class="exp-desc">Behavior-focused learning system work.</span>
-              </div>
-              <div class="exp-item">
-                <div class="exp-logo-slot"></div>
-                <span class="exp-name">General Mills</span>
-                <span class="exp-desc">Onboarding, adoption, and manager capability work.</span>
-              </div>
-              <div class="exp-item">
-                <div class="exp-logo-slot"></div>
-                <span class="exp-name">Siemens Healthineers</span>
-                <span class="exp-desc">Enterprise learning and enablement experience.</span>
-              </div>
-              <div class="exp-item">
-                <div class="exp-logo-slot"></div>
-                <span class="exp-name">Strategic Education, Inc.</span>
-                <span class="exp-desc">Training systems and performance support experience.</span>
-              </div>
-            </div>
+          <div class="signal-item">
+            <span class="problem-label">Manager reinforcement</span>
+            <span class="signal-desc">Proof that the behavior is being coached and recognized.</span>
+          </div>
+          <div class="signal-item">
+            <span class="problem-label">Confidence and readiness</span>
+            <span class="signal-desc">Pulse checks that show whether people can do the work.</span>
+          </div>
+          <div class="signal-item">
+            <span class="problem-label">Business lift</span>
+            <span class="signal-desc">Metrics tied to the behavior that matters.</span>
+          </div>
+        </div>
+        <div class="brand-strip">
+          <div class="brand-item">
+            <img src="assets/logos/esa-logo.svg" alt="ESA" />
+            <span class="exp-name">ESA</span>
+            <span class="exp-desc">Behavior-focused learning system work.</span>
+          </div>
+          <div class="brand-item">
+            <img src="assets/logos/general-mills-logo.svg" alt="General Mills" />
+            <span class="exp-name">General Mills</span>
+            <span class="exp-desc">Onboarding, adoption, and manager capability work.</span>
+          </div>
+          <div class="brand-item">
+            <img src="assets/logos/siemens-healthineers-logo.svg" alt="Siemens Healthineers" />
+            <span class="exp-name">Siemens Healthineers</span>
+            <span class="exp-desc">Enterprise learning and enablement experience.</span>
+          </div>
+          <div class="brand-item">
+            <img src="assets/logos/strategic-education-logo.svg" alt="Strategic Education, Inc." />
+            <span class="exp-name">Strategic Education, Inc.</span>
+            <span class="exp-desc">Training systems and performance support experience.</span>
           </div>
         </div>
       </div>
@@ -275,46 +268,46 @@
         <p class="overline">Where FISCH fits best</p>
         <h2>Built for teams where performance is visible, inconsistent, or hard to sustain.</h2>
         <p class="section-lead">FISCH works best when the behavior gap is real and observable. In onboarding, adoption, manager capability, role readiness, and change efforts where expectations need to show up in actual work.</p>
-        <p class="overline">Best-fit categories</p>
-        <ul class="problem-list">
-          <li>
-            <span class="problem-label">Onboarding</span>
-            <span class="problem-desc">When new people need to perform faster with less friction.</span>
+        <ul class="fit-matrix">
+          <li class="fit-row">
+            <span class="fit-category">Onboarding</span>
+            <span class="fit-arrow">→</span>
+            <div class="fit-scenario">
+              <span class="fit-scenario-name">New manager onboarding</span>
+              <span class="fit-scenario-desc">Helping managers reinforce the right moves early.</span>
+            </div>
           </li>
-          <li>
-            <span class="problem-label">Adoption</span>
-            <span class="problem-desc">When a tool, process, or system is not translating into use.</span>
+          <li class="fit-row">
+            <span class="fit-category">Adoption</span>
+            <span class="fit-arrow">→</span>
+            <div class="fit-scenario">
+              <span class="fit-scenario-name">Tool adoption</span>
+              <span class="fit-scenario-desc">Making a new system easier to use in real work.</span>
+            </div>
           </li>
-          <li>
-            <span class="problem-label">Manager capability</span>
-            <span class="problem-desc">When reinforcement and coaching are inconsistent.</span>
+          <li class="fit-row">
+            <span class="fit-category">Manager capability</span>
+            <span class="fit-arrow">→</span>
+            <div class="fit-scenario">
+              <span class="fit-scenario-name">Reinforcement and coaching</span>
+              <span class="fit-scenario-desc">Making manager support visible and consistent.</span>
+            </div>
           </li>
-          <li>
-            <span class="problem-label">Role readiness</span>
-            <span class="problem-desc">When people know the theory but struggle in the real moment.</span>
+          <li class="fit-row">
+            <span class="fit-category">Role readiness</span>
+            <span class="fit-arrow">→</span>
+            <div class="fit-scenario">
+              <span class="fit-scenario-name">Sales capability</span>
+              <span class="fit-scenario-desc">Turning expertise into repeatable behaviors in client conversations.</span>
+            </div>
           </li>
-          <li>
-            <span class="problem-label">Change efforts</span>
-            <span class="problem-desc">When new expectations are announced but not embedded.</span>
-          </li>
-        </ul>
-        <p class="overline">Example scenarios</p>
-        <ul class="problem-list">
-          <li>
-            <span class="problem-label">New manager onboarding</span>
-            <span class="problem-desc">Helping managers reinforce the right moves early.</span>
-          </li>
-          <li>
-            <span class="problem-label">Tool adoption</span>
-            <span class="problem-desc">Making a new system easier to use in real work.</span>
-          </li>
-          <li>
-            <span class="problem-label">Sales capability</span>
-            <span class="problem-desc">Turning expertise into repeatable behaviors in client conversations.</span>
-          </li>
-          <li>
-            <span class="problem-label">Process change</span>
-            <span class="problem-desc">Embedding new expectations into day-to-day execution.</span>
+          <li class="fit-row">
+            <span class="fit-category">Change efforts</span>
+            <span class="fit-arrow">→</span>
+            <div class="fit-scenario">
+              <span class="fit-scenario-name">Process change</span>
+              <span class="fit-scenario-desc">Embedding new expectations into day-to-day execution.</span>
+            </div>
           </li>
         </ul>
       </div>
@@ -347,12 +340,37 @@
       </div>
     </section>
 
-    <!-- 8. CTA -->
+    <!-- 8. Contact -->
     <section id="contact">
-      <div class="section-inner cta-inner">
-        <h2>When performance breaks, build the fix.</h2>
-        <p class="section-lead">Start with the behavior, the moment, and the smallest useful support. FISCH helps teams turn expertise into action, action into habit, and habit into proof.</p>
-        <a href="mailto:hello@fisch.life" class="btn-primary">Start a conversation</a>
+      <div class="section-inner">
+        <div class="contact-split">
+          <div class="contact-copy">
+            <h2>When performance breaks, build the fix.</h2>
+            <p class="section-lead">Start with the behavior, the moment, and the smallest useful support. FISCH helps teams turn expertise into action, action into habit, and habit into proof.</p>
+          </div>
+          <div class="contact-form-wrap">
+            <form class="contact-form" name="contact" action="mailto:hello@fisch.life" method="post" enctype="text/plain">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" autocomplete="organization" />
+              </div>
+              <div class="form-field">
+                <label for="message">What are you trying to change?</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Start a conversation</button>
+            </form>
+            <p class="form-fallback">Or email <a href="mailto:hello@fisch.life">hello@fisch.life</a></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -360,11 +378,12 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="wordmark">FISCH</span>
+      <img src="assets/logos/fisch-logo-green-gradient-exterior.svg" alt="FISCH" class="wordmark-img" />
       <span class="footer-tagline">Behavior-change and learning design</span>
       <span class="footer-copy">&copy; 2026</span>
     </div>
   </footer>
 
+  <script src="main.js"></script>
 </body>
 </html>
