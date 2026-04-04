@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 580" fill="none">
+  <defs>
+    <radialGradient id="hero-field" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7a9c82" stop-opacity="0.14"/>
+      <stop offset="60%" stop-color="#3c5048" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0c0c0c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hero-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7a9c82" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#4a6855" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0c0c0c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hero-atmosphere" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+  </defs>
+  <ellipse cx="320" cy="290" rx="300" ry="220" fill="url(#hero-field)" filter="url(#hero-atmosphere)"/>
+  <ellipse cx="320" cy="290" rx="90" ry="64" fill="url(#hero-core)" transform="rotate(-8, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="34" ry="23" fill="none" stroke="#6a8874" stroke-width="0.75" opacity="0.50" transform="rotate(-14, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="60" ry="42" fill="none" stroke="#5e7c6a" stroke-width="0.75" opacity="0.42" transform="rotate(-10, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="90" ry="62" fill="none" stroke="#527264" stroke-width="0.75" opacity="0.33" transform="rotate(-7, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="124" ry="86" fill="none" stroke="#486860" stroke-width="0.75" opacity="0.24" transform="rotate(-3, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="160" ry="110" fill="none" stroke="#3e5e5a" stroke-width="0.65" opacity="0.18" transform="rotate(1, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="198" ry="136" fill="none" stroke="#365454" stroke-width="0.60" opacity="0.13" transform="rotate(4, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="240" ry="164" fill="none" stroke="#2e4a4a" stroke-width="0.55" opacity="0.09" transform="rotate(6, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="284" ry="194" fill="none" stroke="#284244" stroke-width="0.50" opacity="0.07" transform="rotate(8, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="330" ry="224" fill="none" stroke="#223a3e" stroke-width="0.50" opacity="0.05" transform="rotate(10, 320, 290)"/>
+  <ellipse cx="320" cy="290" rx="378" ry="256" fill="none" stroke="#1c3238" stroke-width="0.50" opacity="0.03" transform="rotate(12, 320, 290)"/>
+  <path d="M 269 242 A 90 62 -7 0 1 365 233" stroke="#7a9c82" stroke-width="0.75" opacity="0.50" fill="none"/>
+  <path d="M 503 245 A 198 136 4 0 1 486 370" stroke="#7a9c82" stroke-width="0.60" opacity="0.28" fill="none"/>
+</svg>

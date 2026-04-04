@@ -43,6 +43,46 @@
 </head>
 <body>
 
+  <nav class="nav-rail" aria-label="Section navigation">
+    <a href="#" class="rail-wordmark" aria-label="FISCH home">
+      <img src="assets/logos/fisch-logo-white.svg" alt="FISCH" onerror="this.src='assets/logos/fisch-logo-white.png'" />
+    </a>
+    <ul class="rail-links" role="list">
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#hero" class="rail-link">Intro</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#problem" class="rail-link">Problem</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#method" class="rail-link">Method</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#what-gets-built" class="rail-link">Build</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#proof" class="rail-link">Proof</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#who" class="rail-link">Fit</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#offers" class="rail-link">Offers</a>
+      </li>
+      <li class="rail-item">
+        <span class="rail-dot" aria-hidden="true"></span>
+        <a href="#contact" class="rail-link">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
   <header class="site-header">
     <nav class="nav-inner">
       <a href="#" class="wordmark"><img src="assets/logos/fisch-logo-white.svg" alt="FISCH" onerror="this.src='assets/logos/fisch-logo-white.png'" /></a>
@@ -61,12 +101,21 @@
     <!-- 1. Hero -->
     <section id="hero">
       <div class="section-inner hero-inner">
-        <h1>Turn expertise into performance.</h1>
-        <p class="hero-sub">FISCH helps organizations turn expertise into observable behavior change by building practical systems around the moments where performance breaks.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Start a conversation</a>
-          <a href="#method" class="btn-ghost">See the method</a>
+        <div class="hero-copy">
+          <h1>Turn expertise into performance.</h1>
+          <p class="hero-sub">FISCH helps organizations turn expertise into observable behavior change by building practical systems around the moments where performance breaks.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Start a conversation</a>
+            <a href="#method" class="btn-ghost">See the method</a>
+          </div>
+          <span class="scroll-cue" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="2" x2="10" y2="14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+              <polyline points="5,10 10,15 15,10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
         </div>
+        <div class="hero-atmosphere" aria-hidden="true"></div>
       </div>
     </section>
 

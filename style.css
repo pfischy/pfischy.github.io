@@ -252,9 +252,26 @@ section + section {
   padding-bottom: var(--space-20);
 }
 
-.hero-inner h1 {
+.hero-copy h1 {
   max-width: 18ch;
   margin-bottom: var(--space-4);
+}
+
+.hero-atmosphere {
+  display: none;
+}
+
+/* Scroll cue */
+.scroll-cue {
+  display: block;
+  margin-top: var(--space-6);
+  color: var(--text-dim);
+  animation: scroll-cue-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-pulse {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50%       { opacity: 0.75; transform: translateY(4px); }
 }
 
 .hero-sub {
@@ -869,6 +886,124 @@ section + section {
 .footer-copy {
   font-size: 0.75rem;
   color: var(--text-dim);
+}
+
+/* --- Desktop nav rail (min-width: 1200px) --- */
+@media (min-width: 1200px) {
+  /* Hide pill nav; remove offset it created */
+  .site-header { display: none; }
+  main { padding-top: 0; }
+  html { scroll-padding-top: 2rem; }
+
+  /* Hero: two-column layout — atmosphere fills right column */
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+  .hero-atmosphere {
+    display: block;
+    background:
+      radial-gradient(ellipse 70% 55% at 48% 42%, rgba(122, 156, 130, 0.10) 0%, transparent 58%),
+      radial-gradient(ellipse 45% 35% at 52% 58%, rgba(38, 65, 50, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 90% 75% at 50% 50%, rgba(10, 20, 15, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+    min-height: 280px;
+  }
+
+  /* Rail container — pill/card, centered in left gutter */
+  .nav-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: max(1.5rem, calc((100vw - var(--max-w)) / 4));
+    z-index: 100;
+    background-color: rgba(12, 12, 12, 0.86);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 1.5rem 1.25rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .rail-wordmark img {
+    display: block;
+    height: 18px;
+    width: auto;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+  }
+  .rail-wordmark:hover img { opacity: 0.85; }
+
+  /* Links list — relative so blob SVG can position within it */
+  .rail-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .rail-item {
+    display: flex;
+    align-items: center;
+    gap: 1.05rem;
+    padding: 0.6rem 0;
+  }
+
+  /* Dot marker — z-index above blob */
+  .rail-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--border-light);
+    flex-shrink: 0;
+    transition: background-color 0.25s;
+    position: relative;
+    z-index: 2;
+  }
+
+  .rail-link {
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    transition: color 0.25s;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .rail-link:hover { color: var(--text-muted); }
+
+  .rail-item.is-active .rail-dot { background-color: var(--accent); }
+  .rail-item.is-active .rail-link { color: var(--text); }
+
+  /* Blob SVG — absolutely inside .rail-links */
+  .rail-blob-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 13px;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .rail-blob-path {
+    fill: var(--accent);
+    opacity: 0.38;
+    transition: d 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .rail-blob-path { transition: none; }
+  .scroll-cue { animation: none; opacity: 0.4; }
 }
 
 /* --- Responsive --- */
