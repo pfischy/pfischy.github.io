@@ -123,6 +123,8 @@ section + section {
 }
 
 /* --- Header / Nav --- */
+.nav-rail { display: none; }
+
 .site-header {
   position: fixed;
   top: 1.5rem;
@@ -1041,6 +1043,11 @@ section + section {
     gap: var(--space-1);
   }
 
+
+  .hero-inner {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-12);
+  }
 
   .hero-actions {
     flex-direction: column;
