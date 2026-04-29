@@ -917,6 +917,17 @@ section + section {
     min-height: 280px;
   }
 
+  .hero-logo-mark {
+    display: block;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0.92;
+  }
+
   /* Rail container — pill/card, centered in left gutter */
   .nav-rail {
     display: flex;
@@ -1004,6 +1015,47 @@ section + section {
     opacity: 0.38;
     transition: d 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+}
+
+/* Compact rail — hide labels at narrow desktop widths to prevent content overlap */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .nav-rail {
+    padding: 1.25rem 1rem;
+    transform: translateY(-50%);
+  }
+  .rail-link { display: none; }
+}
+
+/* Section jump navigator */
+.section-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 200;
+}
+.section-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(12, 12, 12, 0.88);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+.section-nav-btn:hover { color: var(--accent); border-color: var(--accent); }
+.section-nav-btn:disabled { opacity: 0.2; cursor: default; }
+@media (max-width: 640px) {
+  .section-nav { bottom: 1.25rem; right: 1.25rem; }
+  .section-nav-btn { width: 2.75rem; height: 2.75rem; }
 }
 
 /* Reduced motion overrides */

@@ -208,3 +208,37 @@
   }, { once: true });
 
 }());
+
+// Section jump navigator
+(function () {
+  'use strict';
+
+  var sectionIds = ['hero', 'problem', 'method', 'what-gets-built', 'proof', 'who', 'offers', 'contact'];
+  var sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  var prevBtn = document.getElementById('section-prev');
+  var nextBtn = document.getElementById('section-next');
+
+  if (!prevBtn || !nextBtn || !sections.length) return;
+
+  var currentIndex = 0;
+
+  function updateButtons() {
+    prevBtn.disabled = currentIndex <= 0;
+    nextBtn.disabled = currentIndex >= sections.length - 1;
+  }
+
+  prevBtn.addEventListener('click', function () {
+    if (currentIndex > 0) sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  nextBtn.addEventListener('click', function () {
+    if (currentIndex < sections.length - 1) sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.addEventListener('railActivate', function (e) {
+    var idx = sectionIds.indexOf(e.detail.id);
+    if (idx !== -1) { currentIndex = idx; updateButtons(); }
+  });
+
+  updateButtons();
+}());
