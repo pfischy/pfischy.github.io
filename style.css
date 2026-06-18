@@ -162,7 +162,7 @@ section + section {
 
 .wordmark img {
   display: block;
-  height: 22px;
+  height: 32px;
   width: auto;
 }
 
@@ -257,6 +257,11 @@ section + section {
 .hero-copy h1 {
   max-width: 18ch;
   margin-bottom: var(--space-4);
+}
+
+.hero-copy h1 em {
+  color: var(--accent);
+  font-style: italic;
 }
 
 .hero-atmosphere {
@@ -429,6 +434,10 @@ section + section {
   margin-bottom: var(--space-8);
 }
 
+#friction .problem-list li {
+  grid-template-columns: 1fr;
+}
+
 .problem-list li {
   display: grid;
   grid-template-columns: 10rem 1fr;
@@ -555,6 +564,10 @@ section + section {
   border-radius: 1px;
 }
 
+#use-cases .build-items {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .build-item {
   display: flex;
   flex-direction: column;
@@ -580,6 +593,17 @@ section + section {
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.5;
+  max-width: none;
+}
+
+.offer-best {
+  display: block;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.55;
   max-width: none;
 }
 
@@ -950,7 +974,7 @@ section + section {
 
   .rail-wordmark img {
     display: block;
-    height: 20px;
+    height: 28px;
     width: auto;
     opacity: 0.4;
     transition: opacity 0.2s;
@@ -1158,5 +1182,134 @@ section + section {
     flex-direction: column;
     gap: var(--space-1);
     align-items: flex-start;
+  }
+}
+
+/* --- Transform (From Know-How to System) --- */
+#transform {
+  background-color: var(--bg-section);
+}
+
+#transform .section-inner {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+  max-width: 1080px;
+}
+
+#transform h2 {
+  max-width: 28ch;
+  margin-bottom: var(--space-3);
+}
+
+#transform .section-lead {
+  margin-bottom: var(--space-4);
+}
+
+/* 3-column proportional grid: 43% image | 14% bridge | 43% image */
+.transform-visual {
+  display: grid;
+  grid-template-columns: 43fr 14fr 43fr;
+  align-items: center;
+  column-gap: var(--space-3);
+}
+
+.transform-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* No order override — HTML order is label first, image second */
+.transform-figure {
+  margin: 0;
+}
+
+/* Images embed into background — no border, no frame */
+.transform-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.transform-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: none;
+}
+
+/* Bridge: connectors + mark in a row */
+.transform-bridge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Slightly green-tinted so lines read against the dark background */
+.transform-connector {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(122, 156, 130, 0.3);
+}
+
+.transform-mark {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.65rem 0.6rem;
+  border: 1px solid rgba(122, 156, 130, 0.28);
+  border-radius: 3px;
+  background-color: rgba(122, 156, 130, 0.05);
+}
+
+.transform-mark img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+/* Hidden — logo alone is sufficient in the compact bridge */
+.transform-steps {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  /* Stack: label / image / bridge / label / image */
+  .transform-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  /* Bridge becomes a vertical connector strip */
+  .transform-bridge {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
+  }
+
+  .transform-connector {
+    flex: none;
+    width: 1px;
+    height: 1.5rem;
+  }
+
+  .transform-mark img {
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transform-mark {
+    transition: none;
   }
 }
