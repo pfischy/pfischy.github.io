@@ -213,7 +213,14 @@
 (function () {
   'use strict';
 
-  var sectionIds = ['hero', 'problem', 'method', 'what-gets-built', 'proof', 'who', 'offers', 'contact'];
+  var sectionIds = [
+    'hero',
+    'system',
+    'use-cases',
+    'what-gets-built',
+    'offers',
+    'contact'
+  ];
   var sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
   var prevBtn = document.getElementById('section-prev');
   var nextBtn = document.getElementById('section-next');
