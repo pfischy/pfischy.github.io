@@ -71,15 +71,52 @@
     document.dispatchEvent(new CustomEvent('railActivate', { detail: { id: id } }));
   }
 
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        setActive(entry.target.id);
+  var activeId = null;
+  var ticking = false;
+
+  function getActiveId() {
+    var doc = document.documentElement;
+    var scrollTop = window.pageYOffset || doc.scrollTop || 0;
+    var maxScroll = Math.max(0, doc.scrollHeight - window.innerHeight);
+
+    if (maxScroll && scrollTop >= maxScroll - 4) {
+      return sections[sections.length - 1].id;
+    }
+
+    var marker = scrollTop + window.innerHeight * 0.25;
+    var current = sections[0].id;
+
+    sections.forEach(function (section) {
+      if (section.offsetTop <= marker) {
+        current = section.id;
       }
     });
-  }, { rootMargin: '-40% 0px -55% 0px' });
 
-  sections.forEach(function (s) { observer.observe(s); });
+    return current;
+  }
+
+  function updateActive() {
+    var id = getActiveId();
+    if (id && id !== activeId) {
+      activeId = id;
+      setActive(id);
+    }
+  }
+
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      updateActive();
+    });
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('hashchange', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+  updateActive();
 }());
 
 // Method section

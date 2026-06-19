@@ -324,11 +324,16 @@ section + section {
 }
 
 /* --- Compressed homepage sections --- */
+#system,
 #friction,
 #use-cases,
 #what-gets-built,
 #offers {
   background-color: var(--bg);
+}
+
+#hero + #system {
+  border-top: 0;
 }
 
 .cost-grid,
