@@ -1,6 +1,70 @@
 (function () {
   'use strict';
 
+  var nav = document.querySelector('.nav-inner');
+  var toggle = document.querySelector('.mobile-menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var scrollCloseAttached = false;
+
+  if (!nav || !toggle || !menu) return;
+
+  function isOpen() {
+    return toggle.getAttribute('aria-expanded') === 'true';
+  }
+
+  function closeOnScroll() {
+    if (isOpen()) {
+      setOpen(false);
+    }
+  }
+
+  function syncScrollClose(isOpen) {
+    if (isOpen && !scrollCloseAttached) {
+      window.addEventListener('scroll', closeOnScroll, { passive: true });
+      scrollCloseAttached = true;
+    } else if (!isOpen && scrollCloseAttached) {
+      window.removeEventListener('scroll', closeOnScroll);
+      scrollCloseAttached = false;
+    }
+  }
+
+  function setOpen(isOpen) {
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.textContent = isOpen ? 'Close' : 'Menu';
+    menu.classList.toggle('is-open', isOpen);
+    menu.hidden = !isOpen;
+    syncScrollClose(isOpen);
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!isOpen());
+  });
+
+  menu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      setOpen(false);
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (isOpen() && !nav.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+
+  setOpen(false);
+}());
+
+(function () {
+  'use strict';
+
   var steps   = document.querySelectorAll('#journey .journey-step');
   var panel   = document.querySelector('#journey .journey-panel');
   var panelText = document.querySelector('#journey .journey-panel-text');

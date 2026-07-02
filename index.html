@@ -79,6 +79,9 @@
   <header class="site-header">
     <nav class="nav-inner">
       <a href="#" class="wordmark"><img src="assets/logos/fisch-logo-white.svg" alt="FISCH" onerror="this.src='assets/logos/fisch-logo-white.png'" /></a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
       <div class="nav-links">
         <a href="#system" class="nav-link">System</a>
         <a href="#use-cases" class="nav-link">Start</a>
@@ -86,6 +89,15 @@
         <a href="#offers" class="nav-link">Ways to Work</a>
       </div>
       <a href="#contact" class="nav-cta">Contact</a>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#hero" class="mobile-menu-link">Intro</a>
+        <a href="#system" class="mobile-menu-link">System</a>
+        <a href="#use-cases" class="mobile-menu-link">Start</a>
+        <a href="#what-gets-built" class="mobile-menu-link">Build</a>
+        <a href="#offers" class="mobile-menu-link">Offers</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+        <a href="#contact" class="mobile-menu-cta">What do you want to make repeatable?</a>
+      </div>
     </nav>
   </header>
 
@@ -204,23 +216,25 @@
     <!-- 5. What FISCH builds -->
     <section id="what-gets-built">
       <div class="section-inner">
-        <p class="overline">What FISCH Builds</p>
-        <h2>Training alone is not the system.</h2>
-        <p class="section-lead">Repeatable work needs training, tools, and reinforcement working together.</p>
-        <ul class="build-items build-items-simple">
-          <li class="build-item">
-            <span class="build-item-name">Training</span>
-            <span class="build-item-desc">Explain the work.</span>
-          </li>
-          <li class="build-item">
-            <span class="build-item-name">Tools</span>
-            <span class="build-item-desc">Support the work.</span>
-          </li>
-          <li class="build-item">
-            <span class="build-item-name">Reinforcement</span>
-            <span class="build-item-desc">Make the work stick.</span>
-          </li>
-        </ul>
+        <div class="system-stack-copy">
+          <p class="overline">WHAT FISCH BUILDS</p>
+          <h2>Training alone is not the system.</h2>
+          <p class="section-lead">A course can help. But repeatable work needs training, tools, reinforcement, and proof working together.</p>
+        </div>
+        <figure class="system-stack-visual">
+          <img
+            src="assets/images/fisch-system-stack.png"
+            alt="FISCH system stack showing onboarding, training, job aids, manager reinforcement, workflow prompts, and proof."
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="system-stack-strip" role="group" aria-label="FISCH system parts">
+          <button type="button" class="system-stack-button">Training</button>
+          <button type="button" class="system-stack-button">Tools</button>
+          <button type="button" class="system-stack-button">Reinforcement</button>
+          <button type="button" class="system-stack-button">Proof</button>
+        </div>
       </div>
     </section>
 
@@ -303,6 +317,6 @@
     </button>
   </nav>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=mobile-menu"></script>
 </body>
 </html>
