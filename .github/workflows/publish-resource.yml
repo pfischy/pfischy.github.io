@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.event.issue.user.login == 'pfischy' && contains(github.event.issue.labels.*.name, 'resource-submission')
+    if: github.event.issue.user.login == 'pfischy' && startsWith(github.event.issue.title, 'Resource: ')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364 # v4.2.2
