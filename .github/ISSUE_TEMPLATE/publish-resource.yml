@@ -1,7 +1,6 @@
 name: Publish a Field Guide resource
 description: Add a resource to the FISCH website using a mobile-friendly form.
 title: "Resource: "
-labels: ["resource-submission"]
 body:
   - type: markdown
     attributes:
