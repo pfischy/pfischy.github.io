@@ -114,3 +114,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 #readiness-message{margin-bottom:20px;max-width:300px}
 @media(max-width:760px){.briefing-check{grid-template-columns:1fr}.briefing-step summary{grid-template-columns:42px 1fr 20px;padding:22px 0}.briefing-step>div{padding:0 10px 25px 59px}.demo-stage{padding:55px 0}}
 @media print{.demo-interaction .btn,.demo-feedback button,.briefing-steps .summary-plus{display:none!important}.demo-stage{background:white;color:black}.demo-context>p,.demo-context .micro{color:#333}.demo-interaction{box-shadow:none}.manager-kit{background:white;border:1px solid #bbb}.briefing-step>div{display:block}.briefing-step[open]>div{display:block}.briefing-step:not([open])>div{display:none}.score-number{font-size:3rem}}
+
+/* Homepage Montana campaign: a compact editorial feature using existing FISCH tokens. */
+.campaign-feature{background:#edf0e9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
+.campaign-feature-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center}
+.campaign-feature h2{font-size:clamp(1.55rem,3vw,2.35rem);margin:10px 0 12px;max-width:670px}
+.campaign-feature-copy>p:last-child{color:var(--muted);max-width:700px}
+.campaign-feature-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.campaign-feature-link{font-size:.91rem;font-weight:700;text-underline-offset:4px}
+@media(max-width:820px){.campaign-feature-inner{grid-template-columns:1fr;gap:22px}.campaign-feature-actions{flex-direction:row;align-items:center;flex-wrap:wrap}}
+@media(max-width:550px){.campaign-feature-actions{flex-direction:column;align-items:stretch}.campaign-feature-actions .btn{width:100%}}
