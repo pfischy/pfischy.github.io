@@ -49,3 +49,22 @@ if(window.matchMedia&&window.matchMedia('(pointer:fine)').matches){
  tag.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(measurementId);
  document.head.appendChild(tag);
 })();
+
+/* Explicit CTA signals; mailto clicks are interest, NOT confirmed leads. */
+(function(){
+ 'use strict';
+ document.addEventListener('click',function(event){
+  var target=event.target;
+  var link=target&&target.closest?target.closest('a[href]'):null;
+  if(!link||typeof window.gtag!=='function')return;
+  var href=link.getAttribute('href')||'';
+  var ctaId=link.getAttribute('data-fisch-cta');
+  var isEmail=href.toLowerCase().indexOf('mailto:')===0;
+  if(!ctaId&&!isEmail)return;
+  var id=ctaId||(link.closest('header')?'header_email':link.closest('footer')?'footer_email':'page_email');
+  window.gtag('event',isEmail?'fisch_contact_click':'fisch_cta_click',{
+   cta_id:id,
+   page_path:window.location.pathname
+  });
+ },true);
+})();
