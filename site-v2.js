@@ -32,3 +32,20 @@ if(window.matchMedia&&window.matchMedia('(pointer:fine)').matches){
  });
 }
 })();
+
+/* FISCH Google Analytics 4: public production pages only. */
+(function(){
+ 'use strict';
+ var host=window.location.hostname;
+ if(host!=='fisch.life' && host!=='www.fisch.life')return;
+ if(/^\/studio(?:\/|$)/.test(window.location.pathname))return;
+ var measurementId='G-CH25469WNK';
+ window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+ window.gtag('js',new Date());
+ window.gtag('config',measurementId);
+ var tag=document.createElement('script');
+ tag.async=true;
+ tag.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(measurementId);
+ document.head.appendChild(tag);
+})();
