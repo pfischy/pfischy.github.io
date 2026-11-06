@@ -14,3 +14,21 @@ var replyLink=result.querySelector('a.btn');
 if(replyLink){replyLink.href='mailto:hello@fisch.life?subject='+encodeURIComponent('FISCH | Decision Tool — '+issueText)+'&body='+encodeURIComponent(emailBody)}
 result.classList.add('show');result.scrollIntoView({behavior:'smooth',block:'nearest'})})}
 })();
+
+/* Intentional motion: reveals and mouse-follow spotlights, without a framework. */
+(function(){
+'use strict';
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduced&&'IntersectionObserver' in window){
+ var elements=[].slice.call(document.querySelectorAll('main .section,main .band,main .transformation,main .proof,main .demo-stage'));
+ elements.forEach(function(el){el.setAttribute('data-reveal','')});
+ var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}})},{rootMargin:'0px 0px 60px 0px',threshold:0.06});
+ elements.forEach(function(el){observer.observe(el)});
+ document.documentElement.classList.add('motion-ready');
+}
+if(window.matchMedia&&window.matchMedia('(pointer:fine)').matches){
+ document.querySelectorAll('.trans-panel,.demo-interaction,.readiness-score').forEach(function(el){
+ el.addEventListener('pointermove',function(ev){var rect=el.getBoundingClientRect();el.style.setProperty('--pointer-x',(ev.clientX-rect.left)+'px');el.style.setProperty('--pointer-y',(ev.clientY-rect.top)+'px')},{passive:true});
+ });
+}
+})();
