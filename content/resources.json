@@ -1,0 +1,30 @@
+[
+  {
+    "title": "The Repeatability Checklist",
+    "type": "Printable field guide",
+    "description": "Find the work that depends too much on one person's memory, judgment, or availability.",
+    "url": "/resources/repeatability-checklist/",
+    "status": "published"
+  },
+  {
+    "title": "The Onboarding Readiness Map",
+    "type": "Editable worksheet",
+    "description": "Define what new hires should actually be able to do—and what managers can observe.",
+    "url": "/resources/onboarding-readiness/",
+    "status": "published"
+  },
+  {
+    "title": "Does This Need Training?",
+    "type": "Interactive tool",
+    "description": "Choose a better first intervention: support, practice, workflow change, or automation.",
+    "url": "/resources/decision-tool/",
+    "status": "published"
+  },
+  {
+    "title": "Montana Workforce Funding: What Employers Can Do Now",
+    "type": "Field note · November 2026",
+    "description": "Separate the new Skills Fund from the existing Incumbent Worker Training program.",
+    "url": "/montana-skills/",
+    "status": "published"
+  }
+]
